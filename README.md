@@ -1,8 +1,8 @@
-![Cover photo](berlin_weather_photo.jpg)
-
 # Airflow Weather Data
-Small project to get familiar with data pipelines and DAGs in Airflow.  
+Small project to get familiar with data pipelines and DAGs in Airflow. 
 
+![Cover photo](berlin_weather_photo.jpg)
+ 
 ## Weather data pipeline
 I programmed a simple pipeline that connects to a weather API and downloads current wheather data for an area in Berlin in .txt and .csv format. The pipeline works successfully.  
 Project and code are modified after [this blog article](https://medium.com/@thallyscostalat/easy-data-pipeline-automation-with-apache-airflow-and-python-83a13e8f67e9).
