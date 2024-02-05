@@ -1,4 +1,4 @@
-# airflow_weather_data
+# Airflow Weather Data
 Small project to get familiar with data pipelines and DAGs in Airflow.  
 
 ## Weather data pipeline
