@@ -28,24 +28,24 @@ def fetch_weather_data():
 
     temporary_df = data.copy()
     temporary_df.reset_index(inplace=True)
-    temporary_df.to_csv('pipeline_temporary_df.csv', index=False)
+    temporary_df.to_csv('/home/seblap/Files/Arbeit/Data Analytics/GitHub repos/airflow_weather_data/data_collection/pipeline_temporary_df.csv', index=False)
     
     return data
 
 # Define the function to save data to a text file
 def save_to_txt_file(data):
-    with open("/home/seblap/Files/Arbeit/Data Analytics/Weiterbildung/Practice/Airflow/data_collection/weather_data.txt", "a") as file:
+    with open("/home/seblap/Files/Arbeit/Data Analytics/GitHub repos/airflow_weather_data/data_collection/weather_data.txt", "a") as file:
         file.write(str(data))
         file.write("\n")
 
 # Save the data into (updated) csv table
 def save_to_csv_file():
-    data = pd.read_csv('pipeline_temporary_df.csv')
-    current_file = pd.read_csv('/home/seblap/Files/Arbeit/Data Analytics/Weiterbildung/Practice/Airflow/data_collection/weather_data.csv')
+    data = pd.read_csv('/home/seblap/Files/Arbeit/Data Analytics/GitHub repos/airflow_weather_data/data_collection/pipeline_temporary_df.csv')
+    current_file = pd.read_csv('/home/seblap/Files/Arbeit/Data Analytics/GitHub repos/airflow_weather_data/data_collection/weather_data.csv')
     new_entry = data.reset_index()
     updated_file = pd.concat([current_file, new_entry], axis=0)
     updated_file = updated_file[['validdate', 'lat', 'lon', 't_2m:C', 'weather_symbol_1h:idx', 'uv:idx']]
-    updated_file.to_csv('/home/seblap/Files/Arbeit/Data Analytics/Weiterbildung/Practice/Airflow/data_collection/weather_data.csv', index=False)
+    updated_file.to_csv('/home/seblap/Files/Arbeit/Data Analytics/GitHub repos/airflow_weather_data/data_collection/weather_data.csv', index=False)
 
 ### Airflow
 # Define the Airflow DAG (Directed Acyclic Graph)
