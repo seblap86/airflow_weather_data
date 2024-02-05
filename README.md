@@ -11,4 +11,4 @@ Project and code are modified after [this blog article](https://medium.com/@thal
 The code was written in VSCode in an Anaconda environment. As this requires constant restarts of the webserver, I am planning to implement the pipeline in a Docker container environment next.
 
 ## Acknowledgment
-Cover photo by <a href="https://unsplash.com/@meshaal_hajali?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Meshaal Al Hajali</a> on <a href="https://unsplash.com/photos/a-tall-tower-with-a-gold-top-with-berlin-victory-column-in-the-background-Etufuqt627s?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+Cover photo by <a href="https://unsplash.com/@meshaal_hajali?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Meshaal Al Hajali</a> on <a href="https://unsplash.com/photos/a-tall-tower-with-a-gold-top-with-berlin-victory-column-in-the-background-Etufuqt627s?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.
