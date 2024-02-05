@@ -14,8 +14,8 @@ import meteomatics.api as api
 # https://github.com/meteomatics/python-connector-api/blob/master/examples/notebooks/00_Overview.ipynb
 
 def fetch_weather_data():
-    username = ## input meteomatics account data here
-    password = ## input meteomatics account data here
+    username = ### input meteomatics account data here ###
+    password = ### input meteomatics account data here ###
 
     coordinates = [(52.49, 13.44)]
     parameters = ['t_2m:C', 'weather_symbol_1h:idx', 'uv:idx'] # Instantaneous temperature, weather symbol last 60m, UV index
@@ -28,7 +28,7 @@ def fetch_weather_data():
 
     temporary_df = data.copy()
     temporary_df.reset_index(inplace=True)
-    temporary_df.to_csv('/home/seblap/Files/Arbeit/Data Analytics/GitHub repos/airflow_weather_data/data_collection/pipeline_temporary_df.csv', index=False)
+    temporary_df.to_csv('/home/seblap/Files/Arbeit/Data Analytics/GitHub repos/airflow_weather_data/temp/pipeline_temporary_df.csv', index=False)
     
     return data
 
@@ -40,7 +40,7 @@ def save_to_txt_file(data):
 
 # Save the data into (updated) csv table
 def save_to_csv_file():
-    data = pd.read_csv('/home/seblap/Files/Arbeit/Data Analytics/GitHub repos/airflow_weather_data/data_collection/pipeline_temporary_df.csv')
+    data = pd.read_csv('/home/seblap/Files/Arbeit/Data Analytics/GitHub repos/airflow_weather_data/temp/pipeline_temporary_df.csv')
     current_file = pd.read_csv('/home/seblap/Files/Arbeit/Data Analytics/GitHub repos/airflow_weather_data/data_collection/weather_data.csv')
     new_entry = data.reset_index()
     updated_file = pd.concat([current_file, new_entry], axis=0)
@@ -73,10 +73,9 @@ task_save_to_txt_file = PythonOperator(
 task_save_to_csv_file = PythonOperator(
     task_id='save_to_csv_file',
     python_callable=save_to_csv_file,
-#    op_kwargs={'data': '{{ ti.xcom_pull(task_ids="fetch_weather_data") }}'},  # Get data from the fetch task - does not work due to DataFrame type
+#    op_kwargs={'data': '{{ ti.xcom_pull(task_ids="fetch_weather_data") }}'},  # Get data from the fetch task - does not work due to DataFrame type (instead, temporarily saved and re-loaded a .csv file)
     dag=dag
 )
 
 # Define the dependencies between tasks
 task_fetch_weather_data >> task_save_to_txt_file
-task_fetch_weather_data >> task_save_to_csv_file
