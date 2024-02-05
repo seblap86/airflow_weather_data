@@ -10,6 +10,9 @@ In this case, information about the current temperature, the weather symbol (sum
   
 Project and code are modified after [this blog article](https://medium.com/@thallyscostalat/easy-data-pipeline-automation-with-apache-airflow-and-python-83a13e8f67e9).
 
+## How to use
+In order to rebuild the project, you need to set up and run Airflow, e.g., as described in the aforementioned blog article. To connect to the Meteomatics weather API, you can create a free test account [here](https://www.meteomatics.com/en/sign-up-weather-api-test-account/).
+
 ## Next steps
 The code was written in VSCode in an Anaconda environment. As this requires constant restarts of the webserver, I am planning to implement the pipeline in a Docker container environment next.
 
