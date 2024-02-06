@@ -14,7 +14,7 @@ Project and code are modified after [this blog article](https://medium.com/@thal
 In order to rebuild the project, you need to set up and run Airflow, e.g., as described in the aforementioned blog article. To connect to the Meteomatics weather API, you can create a free test account [here](https://www.meteomatics.com/en/sign-up-weather-api-test-account/).
 
 ## Next steps
-The code was written in VSCode in an Anaconda environment. As this requires constant restarts of the webserver, I am planning to implement the pipeline in a Docker container environment next.
+To avoid constant manual restarts of the Apache web server, I am planning to get familiar with Docker and run the code in a container next for further automation.
 
 ## Acknowledgment
 Cover photo by <a href="https://unsplash.com/@meshaal_hajali?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Meshaal Al Hajali</a> on <a href="https://unsplash.com/photos/a-tall-tower-with-a-gold-top-with-berlin-victory-column-in-the-background-Etufuqt627s?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.
